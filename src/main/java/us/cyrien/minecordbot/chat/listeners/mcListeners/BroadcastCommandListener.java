@@ -18,10 +18,10 @@ public class BroadcastCommandListener extends MCBListener {
         String cmd = ChatColor.stripColor(event.getCommand());
         if (cmd.equals("broadcast ") || cmd.equals("bc ")) {
             String msg = cmd.split(" ", 2)[1];
-            messenger.sendMessageToAllBoundChannel("\uD83D\uDCE2 " + msg);
+            messenger.sendMessageToAllBoundChannel(msg);
             boolean seeBc = configsManager.getModChannelConfig().getBoolean(ModChannelConfig.Nodes.SEE_BROADCAST);
             if(seeBc) {
-                messenger.sendMessageToAllModChannel("\uD83D\uDCE2 " + msg );
+                messenger.sendMessageToAllModChannel(msg);
             }
         }
     }

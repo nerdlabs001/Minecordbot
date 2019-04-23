@@ -33,14 +33,14 @@ public class BroadcastListener extends MCBListener {
         if (!privateBroadcast && seePlBc) {
             boolean isClearLag = msg.contains("[ClearLag]") || msg.contains("[Clearlag]") || msg.contains("[clearlag]");
             if (isClearLag && seeCL) {
-                messenger.sendMessageToAllBoundChannel("\uD83D\uDCE2 " + msg);
+                messenger.sendMessageToAllBoundChannel(msg);
                 if (seeBc) {
-                    messenger.sendMessageToAllModChannel("\uD83D\uDCE2 " + msg);
+                    messenger.sendMessageToAllModChannel(msg);
                 }
             } else if (!isClearLag) {
-                messenger.sendMessageToAllBoundChannel("\uD83D\uDCE2 " + msg);
+                messenger.sendMessageToAllBoundChannel(msg);
                 if (seeBc) {
-                    messenger.sendMessageToAllModChannel("\uD83D\uDCE2 " + msg);
+                    messenger.sendMessageToAllModChannel(msg);
                 }
             }
         } else if (privateBroadcast) {
@@ -59,7 +59,7 @@ public class BroadcastListener extends MCBListener {
                 messenger.sendMessageToAllModChannel(msg);
             }
         } else {
-            messenger.sendMessageToAllModChannel("\uD83D\uDCE2 " + msg);
+            messenger.sendMessageToAllModChannel(msg);
         }
         mcb.getChatManager().getChatStatus().reset();
     }
